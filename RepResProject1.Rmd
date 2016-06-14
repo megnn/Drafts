@@ -6,7 +6,7 @@ output: html_document
 The below code loads the data and pre-processes it into organized data
 
 ```{r}
-filename <- ""
+filename <- "~/data/RepResearch/activity.csv"
 data <- read.csv(filename,header = TRUE)
 
 ```
@@ -15,12 +15,12 @@ The below code displays the histogram of total number of steps taken by day foll
 
 ```{r}
 
-hist(x = sum(dailysteps, na.rm = TRUE))
+#hist(x = sum(dailysteps, na.rm = TRUE))
 
-meandailysteps <- mean(sum(dailysteps, na.rm = TRUE))
-mediandailysteps <- median(sum(dailysteps, na.rm = TRUE))
+#meandailysteps <- mean(sum(dailysteps, na.rm = TRUE))
+#mediandailysteps <- median(sum(dailysteps, na.rm = TRUE))
 
-paste("The mean of the daily steps is "&$mean&". The median of the daily steps is "&$median&".")
+#paste("The mean of the daily steps is "&$mean&". The median of the daily steps is "&$median&".")
 ```
 
 This code calculates the average daily activity pattern. By creating a time series plot of the 5 minute intervals and the average number of steps taken across all days. It lists the 5 minute interval that on average, across the days, in the data contains the maximum number of steps(ie 9 to 905 across all days was most active interval). 
