@@ -18,10 +18,17 @@ timeseries <- aggregate(stepdata$steps ~ stepdata$interval, FUN = mean)
 plot(timeseries, type = "l", xlab = "5 minute Interval", ylab = "Steps in 5 minute Interval", main = "Average steps taken during 5 Minute Intervals")
 
 #Which Interval has the most steps on average?
-topinterval <- max(steptimeseries, na.rm = TRUE)
+topinterval <- max(timeseries, na.rm = TRUE)
 
 #imput the means into NAs
-#imputdata = transform(stepdata, y = ifelse(is.na(stepdata$steps), mean(stepdata$steps, na.rm=TRUE), stepdata$steps))
+#?#imputdata = transform(stepdata, y = ifelse(is.na(stepdata$steps), mean(stepdata$steps, na.rm=TRUE), stepdata$steps))
+datesubset <- split(stepdata, stepdata$date)
+str(datesubset)
+
+nastep <- is.na(stepdata$steps)
+
+#?#tapply(stepdata, mean)
+
 
 
 #histogram of inputted data
